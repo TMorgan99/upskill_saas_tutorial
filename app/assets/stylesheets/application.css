@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
+
+body{
+  font-family: 'Cormorant Garamond', serif;
+}
