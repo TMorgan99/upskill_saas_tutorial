@@ -14,8 +14,8 @@
  *= require_self
  */
 
-
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,600,700');
+/* https:// or http:// but it needs '//' */
+@import url('//fonts.googleapis.com/css?family=Cormorant+Garamond:400,600,700');
 
 body{
   font-family: 'Cormorant Garamond', serif;
