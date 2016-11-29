@@ -24,7 +24,7 @@
 
 
 .home-callout, .navbar {
-  font-family: 'Cormorant Garamond', serif;
+  // font-family: 'Cormorant Garamond', serif;
 // from uigradients.com 
   background: #43C6AC; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #43C6AC , #F8FFAE); /* Chrome 10-25, Safari 5.1-6 */
@@ -41,6 +41,11 @@
   // color: white;
 }
 
+
+.navbar-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;  
+}
 
 // Fixing the navbar color code (because of 'specificity')
 // these are declared by Bootstrap; they must be overridden here.
