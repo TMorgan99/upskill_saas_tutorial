@@ -19,7 +19,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-body, .navbar {
+.home-callout, .navbar {
   font-family: 'Cormorant Garamond', serif;
 // from uigradients.com 
   background: #43C6AC; /* fallback for old browsers */
@@ -29,3 +29,10 @@ body, .navbar {
   border: none;    
 }
 
+.home-callout {
+  // compensate for the navbar margin, and give a bit of [space!]
+  padding-top: 50px;
+  padding-bottom: 100px;
+  margin-top: -20px;
+  // color: white;
+}
