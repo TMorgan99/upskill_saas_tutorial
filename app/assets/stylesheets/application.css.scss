@@ -58,5 +58,23 @@
       opacity: 0.75;
     }
   }
+  // fixing the 'hamburger'
+  // white stands out much better, and the focus, hover gives a nice touch.
+  // but, when the menu expands, we'll leave the tiny border line...
+  .navbar-toggle { 
+    .icon-bar {
+      background-color: white;
+    }
+    border: 2px solid white;
+    &:hover, &:focus {
+      background-color: #00c6ff;
+    }
+  }
+  
+}
+
+
+
+.navbar-default .navbar-toggle {
 }
 
