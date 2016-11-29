@@ -36,3 +36,18 @@
   margin-top: -20px;
   // color: white;
 }
+
+
+// Fixing the navbar color code (because of 'specificity')
+// these are declared by Bootstrap; they must be overridden here.
+// or, we could compile our own Bootstrap, but then we couldn't use the CDN.
+.navbar-default {
+  .navbar-brand, .navbar-nav > li > a {
+    color: blue;
+    &:hover {
+      color: blue;  // this is not inherited from the Sass, since it is declared by Bootstrap, it must be specified.
+      opacity: 0.75;
+    }
+  }
+}
+
