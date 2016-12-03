@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-  default to: 'TMorgan99@GMail.com'
+  default to: 'TMorgan99@GMail.com'.downcase!
   
   def contact_email( contact )
     @contact = contact
