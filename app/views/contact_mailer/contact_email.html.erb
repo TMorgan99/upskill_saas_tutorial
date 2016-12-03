@@ -5,10 +5,11 @@
     
     <p>
       You have received email from DEVMATCH~!
-      <%= @name %>, <%= @email %>.
+      <%= @contact.name %>, <%= @contact.email %>.
     </p>
+    <p>And the comments are as follows:</p>
     <p>
-      <%= @body %>
+      <%= @contact.comments %>
     </p>
   </body>
 </html>
