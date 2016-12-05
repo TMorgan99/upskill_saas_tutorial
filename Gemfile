@@ -31,6 +31,10 @@ gem 'jbuilder', '2.5.0'
 gem 'bootstrap-sass', '3.3.7'
 gem 'font-awesome-sass', '4.6.2'
 
+# Use Devise for authentication!
+gem 'devise', '4.2.0'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
