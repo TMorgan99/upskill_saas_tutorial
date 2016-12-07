@@ -4,3 +4,18 @@
   <h3>Where entrepreneurs can meet talented developers!</h3>
 
 </div>
+
+<div class="container">
+  <div class="row">
+  <div class="col-md-6 well">
+    <h2 class="text-center">Basic Membership</h2>
+    <h4>Free!</h4>
+    <%= link_to 'Sign up', new_user_registration_path(plan: 1), class: 'btn btn-primary btn-lg btn-block' %>
+  </div>
+  <div class="col-md-6 well">
+    <h2 class="text-center">Pro Membership</h2>
+    <h4>Only $10/month!</h4>
+    <%= link_to 'Sign up', new_user_registration_path(plan: 2), class: 'btn btn-success btn-lg btn-block' %>
+  </div>
+  </div>
+</div>
