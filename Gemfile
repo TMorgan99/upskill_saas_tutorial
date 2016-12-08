@@ -34,6 +34,14 @@ gem 'font-awesome-sass', '4.6.2'
 # Use Devise for authentication!
 gem 'devise', '4.2.0'
 
+# Use Stripe for payment processing.
+gem 'stripe',   '1.48.0'
+
+# Use Figaro for ENV variables
+gem 'figaro', '1.1.1'
+
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
