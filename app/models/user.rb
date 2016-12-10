@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   def save_with_subscription
     if valid?
-      customer = Stripe::Customer.create(description: email, plan: plan_id, card: stripe_card_token)
+      customer = Stripe::Customer.create(description: email, plan: membership_plan_id, card: stripe_card_token)
       self.stripe_customer_token = customer.id
       save!
     end
