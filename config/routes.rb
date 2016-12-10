@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'contact-us', to: 'contacts#new'
   
   resources :users do
-    resource :profiles      # has_1
+    resource :profile      # has_1
   end
   
 end
