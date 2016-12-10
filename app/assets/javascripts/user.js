@@ -1,6 +1,7 @@
 /* global $, Stripe */
 //Document ready.
 $(document).on('turbolinks:load', function(){
+  
   var theForm = $('#pro_form');
   var submitBtn = $('#form-signup-btn');
   
@@ -67,4 +68,9 @@ $(document).on('turbolinks:load', function(){
     //Submit form to our Rails app.
     theForm.get(0).submit();
   }
+});
+
+// simple animation for the flash.
+$(document).on('turbolinks:load', function(){
+  $('.alert').delay(1000).fadeOut(4000);
 });
