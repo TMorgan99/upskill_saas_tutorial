@@ -1,13 +1,31 @@
-<%= @user.inspect %>
-<hr/>
 <% profile = @user.profile %>
 
-<%= image_tag profile.avatar.url %>
-<%= profile.first_name %>
-<%= profile.last_name %>
-<%= profile.job_title %>
-<%  if current_user.membership_plan_id == 2 %>
-<%= profile.contact_email %>
-<%= profile.phone_number %>
-<%  end %>
-<%= profile.description %>
+<div class="container row">
+  
+  <div class="col-md-3 text-center">
+    <%= image_tag profile.avatar.url, class: 'avatar-show-img' %>
+  </div>
+  <div class="col-md-6 text-center">
+    <h1>
+      <%= profile.first_name %>
+      <%= profile.last_name %>
+    </h1>
+    <h3>
+      <%= profile.job_title %>
+    </h3>
+    <div class="well profile-block profile-description">
+      <h3>Description:</h3>
+      <%= profile.description %>
+    </div>
+
+    <% if true ## current_user.membership_plan_id == 2 %>
+      <div class="well profile-block profile-contact-info">
+        <h3>Contact Info:</h3>
+        <%= profile.contact_email %>
+        <br/>
+        <%= profile.phone_number %>
+      </div>
+    <% end %>
+  </div>
+  
+</div>
