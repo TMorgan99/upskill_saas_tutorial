@@ -1,1 +1,12 @@
 <%= @user.inspect %>
+<hr/>
+
+<% profile = @user.profile %>
+<%= profile.first_name %>
+<%= profile.last_name %>
+<%= profile.job_title %>
+<%  if current_user.membership_plan_id == 2 %>
+<%= profile.contact_email %>
+<%= profile.phone_number %>
+<%  end %>
+<%= profile.description %>
