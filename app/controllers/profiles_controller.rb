@@ -12,7 +12,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       flash[ :success ] = "Profile updated!"
       # redirect_to root_path
-      redirect_to user_path( params[:user_id] )
+      redirect_to user_path( id: params[:user_id] )
 
     else
       # ? redirect and flash.
@@ -23,10 +23,21 @@ class ProfilesController < ApplicationController
   def edit
     @user = User.find params[ :user_id ]
     @profile = @user.profile
-
-    
   end
   
+# PATCH/PUT
+  def update
+    @user = User.find params[ :user_id ]
+    @profile = @user.profile
+    if @profile.update_attributes( profile_params )
+      flash[ :success ] = 'Profile Updated!'
+      redirect_to user_path( id: current_user )
+    else
+      # flash[ :error ]
+      render action: :edit      
+    end
+    
+  end
   
   private
   def profile_params
