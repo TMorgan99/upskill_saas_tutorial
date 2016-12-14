@@ -10,11 +10,17 @@
     <div class="col-md-6 well">
       <h2 class="text-center">Your Profile</h2>
       <% if current_user.profile %>
-        <%= link_to 'Edit your Profile', '#', class: 'btn btn-default btn-large btn-block' %>
-        <%= link_to 'View your Profile', user_path( id: current_user.id ), class: 'btn btn-default btn-large btn-block' %>
+        <%= link_to 'Edit your Profile', 
+            edit_user_profile_path( user_id: current_user ), 
+            class: 'btn btn-default btn-large btn-block' %>
+        <%= link_to 'View your Profile', 
+            user_path( id: current_user ), 
+            class: 'btn btn-default btn-large btn-block' %>
       <% else %>
         <p>Creating a profile allows you to share your info with the community!</p>
-        <%= link_to 'Create your profile', new_user_profile_path( user_id: current_user ), class: 'btn btn-default btn-large btn-block' %>
+        <%= link_to 'Create your profile', 
+            new_user_profile_path( user_id: current_user ), 
+            class: 'btn btn-default btn-large btn-block' %>
       <% end %>
     </div>
     <div class="col-md-6 well">
