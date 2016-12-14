@@ -9,7 +9,7 @@
   <% if user_signed_in? %>
     <div class="col-md-6 well">
       <h2 class="text-center">Your Profile</h2>
-      <% if !current_user.profile %>
+      <% if current_user.profile %>
         <%= link_to 'Edit your Profile', '#', class: 'btn btn-default btn-large btn-block' %>
         <%= link_to 'View your Profile', user_path( id: current_user.id ), class: 'btn btn-default btn-large btn-block' %>
       <% else %>
