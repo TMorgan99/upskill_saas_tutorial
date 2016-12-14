@@ -1,5 +1,10 @@
 class ProfilesController < ApplicationController
 
+# must be authentic, and current user for these actions
+  before_action :authenticate_user!
+  before_action :only_current_user!
+  
+  
   def new
     @profile = Profile.new
   end
@@ -46,4 +51,10 @@ class ProfilesController < ApplicationController
       :avatar
       )
   end
+  
+  def only_current_user!
+    @user = User.find params[ :user_id ]
+    redirect_to( root_url ) unless current_user == @user
+  end
+  
 end
