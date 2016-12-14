@@ -18,7 +18,7 @@
       <%= profile.description %>
     </div>
 
-    <% if true ## current_user.membership_plan_id == 2 %>
+    <% if current_user.membership_plan_id == 2 %>
       <div class="well profile-block profile-contact-info">
         <h3>Contact Info:</h3>
         <%= profile.contact_email %>

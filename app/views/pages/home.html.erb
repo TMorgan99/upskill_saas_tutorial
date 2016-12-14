@@ -5,19 +5,40 @@
 
 </div>
 
-<div class="container">
-  <div class="row">
-  <div class="col-md-6 well">
-    <h2 class="text-center">Basic Membership</h2>
-    <h4>Free!</h4>
-    <%= link_to 'Sign up', new_user_registration_path(plan: 1), class: 'btn btn-primary btn-lg btn-block' %>
-  </div>
-  <div class="col-md-6 well">
-    <h2 class="text-center">Pro Membership</h2>
-    <h4>Only $10/month!</h4>
-    <%= link_to 'Sign up', new_user_registration_path(plan: 2), class: 'btn btn-success btn-lg btn-block' %>
-  </div>
-  </div>
-  <%= link_to 'View your profile', new_user_profile_path( user_id: current_user ) if user_signed_in? %>
+<div class="container home-signup-links">
+  <% if user_signed_in? %>
+    <div class="col-md-6 well">
+      <h2 class="text-center">Your Profile</h2>
+      <% if !current_user.profile %>
+        <%= link_to 'Edit your Profile', '#', class: 'btn btn-default btn-large btn-block' %>
+        <%= link_to 'View your Profile', user_path( id: current_user.id ), class: 'btn btn-default btn-large btn-block' %>
+      <% else %>
+        <p>Creating a profile allows you to share your info with the community!</p>
+        <%= link_to 'Create your profile', new_user_profile_path( user_id: current_user ), class: 'btn btn-default btn-large btn-block' %>
+      <% end %>
+    </div>
+    <div class="col-md-6 well">
+      <h2 class="text-center">The Community</h2>
+        <p>Here is where you meet the members!</p>
+        <%= link_to 'Visit your Community', '#', class: 'btn btn-default btn-large btn-block' %>
+    </div>
+      
+  <% else %>
+    <!--Not signed in, show sign in options -->
+    <div class="row">
+      <div class="col-md-6 well">
+        <h2 class="text-center">Basic Membership</h2>
+        <h4>Free!</h4>
+        <%= link_to 'Sign up', new_user_registration_path(plan: 1), class: 'btn btn-primary btn-lg btn-block' %>
+      </div>
+      <div class="col-md-6 well">
+        <h2 class="text-center">Pro Membership</h2>
+        <h4>Only $10/month!</h4>
+        <%= link_to 'Sign up', new_user_registration_path(plan: 2), class: 'btn btn-success btn-lg btn-block' %>
+      </div>
+    </div>
+
+  <% end %>
   
+    
 </div>
